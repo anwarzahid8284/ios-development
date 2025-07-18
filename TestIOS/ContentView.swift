@@ -2,7 +2,6 @@
 //  ContentView.swift
 //  TestIOS
 //
-//  Created by Affan Laptops on 18/07/2025.
 //
 
 import SwiftUI
