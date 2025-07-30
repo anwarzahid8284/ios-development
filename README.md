@@ -20,7 +20,6 @@ Welcome to the **iOS Development Roadmap**, specially designed for Android devel
 - Structs vs Classes  
 - Optionals, Protocols, Closures  
 
----
 
 ```swift
 // 📘 Week 1: Learn Swift Programming Basics
@@ -110,7 +109,7 @@ let development = { (name: String) in
 }
 development("iOS Development")
 ```
-
+---
 
 ### 🚀 Week 2: iOS App Basics + UIKit  
 > Understand UIKit fundamentals, Storyboards, and app lifecycle.
