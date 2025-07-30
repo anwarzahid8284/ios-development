@@ -109,6 +109,114 @@ Welcome to the **iOS Development Roadmap**, specially designed for Android devel
 
 ---
 
+# 📱 Android vs iOS Development Comparison (Beginner to Advanced)
+
+This document provides a **complete roadmap and component-level comparison** for Android developers transitioning to iOS (Swift, SwiftUI, and UIKit). It includes comparisons of UI views, image formats, architecture patterns, asynchronous programming, and more.
+
+---
+
+## Part 1: Image Format & Usage Comparison
+
+| **Use Case / Format**       | **Android**                         | **iOS**                              | **Notes / Alternate**                                                  |
+|-----------------------------|--------------------------------------|--------------------------------------|------------------------------------------------------------------------|
+| **Vector Images**           | `SVG` (`res/drawable/`)              | `PDF` (vector), `SF Symbols`         | iOS **does not support SVG directly**, use **PDF** instead             |
+| **Raster Images**           | `PNG`, `JPG`, `WEBP`                 | `PNG`, `JPG`, `HEIC`, `WEBP` (iOS 14+) | PNG is preferred for UI; HEIC is default for iPhone photos             |
+| **Adaptive Icons**          | XML shapes, foreground/background    | `AppIcon` set with multiple sizes    | Use asset catalog (`.xcassets`) in iOS                                |
+| **Nine-patch Images**       | `.9.png` (stretchable image)         | `resizableImage(withCapInsets:)`     | Use stretchable image in iOS with insets                              |
+| **Lottie Animations**       | `.json` with Lottie library          | `.json` with Lottie iOS              | Cross-platform support (same `.json`)                                 |
+| **System Icons**            | `@drawable/ic_home` or `VectorAsset`| `Image(systemName: "house")` (SF Symbols) | SF Symbols = Apple’s official scalable icon set              |
+
+---
+
+## Part 2: Architecture & Asynchronous Programming
+
+| Concept                    | Android (Kotlin)                                        | iOS (Swift)                                         | Notes                                                                 |
+|---------------------------|----------------------------------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------|
+| **Architecture**          | MVVM / Clean Architecture / MVP                         | MVVM / VIPER / Clean Swift                          | MVVM is most common in SwiftUI                                       |
+| **ViewModel**             | `ViewModel`, `LiveData`, `StateFlow`                    | `ObservableObject`, `@Published`, `@StateObject`   | SwiftUI uses property wrappers for state                             |
+| **Coroutines**            | `suspend`, `launch`, `withContext`                      | `async/await`, `Task`, `TaskGroup`                 | Swift Concurrency introduced in Swift 5.5+                            |
+| **Flow**                  | `Flow`, `SharedFlow`, `StateFlow`                       | `AsyncStream`, `Combine` Publisher/Subscriber      | Combine is Apple’s reactive framework                                |
+| **DI (Dependency Injection)** | Hilt / Koin                                        | Swift has no built-in DI — use **Swinject** / Resolver | Manual injection or 3rd party libs in iOS                          |
+| **Networking**            | Retrofit / OkHttp / Ktor                                 | URLSession / Alamofire / Combine Networking        | URLSession is native, Alamofire is popular for abstraction           |
+| **Room / Database**       | Room DB                                                 | CoreData / Realm                                   | CoreData = official ORM for Apple; Realm = cross-platform            |
+| **Shared Preferences**    | `SharedPreferences`                                     | `UserDefaults`                                     | Both for key-value small storage                                     |
+
+---
+
+## Part 3: Kotlin vs Swift
+
+| Concept             | Kotlin                          | Swift                          |
+|---------------------|----------------------------------|----------------------------------|
+| Function            | `fun add(a: Int): Int`          | `func add(a: Int) -> Int`       |
+| Variable            | `val name = "John"`             | `let name = "John"`             |
+| Mutable Var         | `var age = 20`                  | `var age = 20`                  |
+| Null Safety         | `String?` + `?.`, `?:`, `!!`     | `String?` + `?`, `??`, `!`       |
+| List                | `listOf(1, 2)`                  | `[1, 2]`                         |
+| Map                 | `mapOf("key" to "value")`      | `["key": "value"]`             |
+| Set                 | `setOf(1, 2)`                   | `Set([1, 2])`                    |
+| Class               | `class Person {}`               | `class Person {}`               |
+| Data Class          | `data class User(...)`          | `struct User: Codable {}`       |
+| Extension           | `fun String.upper()`            | `extension String {}`           |
+
+---
+
+## Part 4: SwiftUI View Comparison
+
+This guide helps experienced Android developers understand iOS (SwiftUI) views and layout by mapping familiar Android components to their SwiftUI counterparts.
+
+---
+
+| **Android View / Layout**    | **SwiftUI Equivalent**                    | **Notes**                                            |
+| ---------------------------- | ----------------------------------------- | ---------------------------------------------------- |
+| `LinearLayout (vertical)`    | `VStack`                                  | Vertical arrangement (top to bottom)                 |
+| `LinearLayout (horizontal)`  | `HStack`                                  | Horizontal arrangement (left to right)               |
+| `FrameLayout`                | `ZStack`                                  | Overlapping views                                    |
+| `RelativeLayout`             | `ZStack` + `.offset()` or alignment       | Achieve similar behavior using alignment and offsets |
+| `ConstraintLayout`           | `ZStack` + `GeometryReader`               | Fine-grained control over layout                     |
+| `ScrollView`                 | `ScrollView`                              | Scrollable container (vertical/horizontal)           |
+| `TextView`                   | `Text`                                    | For displaying text                                  |
+| `EditText`                   | `TextField`, `SecureField`                | Plain or secure input fields                         |
+| `Button`                     | `Button`                                  | Interactive button with action                       |
+| `ImageView`                  | `Image`                                   | Static or dynamic images                             |
+| `CheckBox`                   | `Toggle` with label                       | Two-state switch or checkbox                         |
+| `RadioGroup` + `RadioButton` | `Picker` or custom                        | Create your own radio-like selection                 |
+| `Switch`                     | `Toggle`                                  | On/Off state control                                 |
+| `RatingBar`                  | `HStack` of `Image(systemName:)`          | No default star view — build manually                |
+| `SeekBar`                    | `Slider`                                  | Continuous range slider                              |
+| `ProgressBar`                | `ProgressView`                            | Loading/progress bar                                 |
+| `WebView`                    | `WebView` via `UIViewRepresentable`       | Needs UIKit bridge                                   |
+| `RecyclerView`               | `List` + `ForEach`                        | Dynamic scrolling list                               |
+| `ListView`                   | `List`                                    | Standard list                                        |
+| `GridView`                   | `LazyVGrid`, `LazyHGrid`                  | Lazy grid layouts in iOS 14+                         |
+| `CardView`                   | `RoundedRectangle` + modifiers            | Custom card using shape, shadow, background          |
+| `ViewPager`                  | `TabView` with swipe gesture              | Swipable pages                                       |
+| `TabLayout + ViewPager2`     | `TabView` + `.tabItem()`                  | Tabbed UI navigation                                 |
+| `Toolbar` / `ActionBar`      | `NavigationStack` + `.navigationTitle()`  | Navigation bar and titles                            |
+| `DrawerLayout`               | Custom `ZStack` + `.offset()`             | No built-in drawer, must build manually              |
+| `BottomNavigationView`       | `TabView`                                 | Bottom tab bar                                       |
+| `Snackbar`                   | `Overlay` + custom                        | Create a custom notification view                    |
+| `Toast`                      | `Alert` or `Overlay`                      | Conditional alert or custom popup                    |
+| `View`                       | `Spacer`, `Divider`, `Color`, `Rectangle` | Generic UI building blocks                           |
+| `Divider`                    | `Divider()`                               | Horizontal/vertical line                             |
+| `Space`                      | `Spacer()`                                | Empty space filler                                   |
+
+---
+
+## Part 5: Layout Modifiers Comparison
+
+
+| **Android Attribute**           | **SwiftUI Equivalent**            | **Notes**                          |
+| ------------------------------- | --------------------------------- | ---------------------------------- |
+| `layout_width`, `layout_height` | `.frame(width:, height:)`         | Set fixed or dynamic sizes         |
+| `padding`, `margin`             | `.padding()`, `.frame()`          | Adds spacing around the view       |
+| `layout_gravity`, `gravity`     | `.alignment()`, stack alignment   | Align views within stacks          |
+| `weight`                        | `Spacer()` or `.frame(maxWidth:)` | Fills remaining space              |
+| `visibility=\"gone\"`           | Conditional rendering (`if`)      | Hide or remove views conditionally |
+| `background`                    | `.background(Color.red)`          | Set background color or shape      |
+| `elevation`, `shadow`           | `.shadow(radius:)`                | Add shadows                        |
+| `cornerRadius`, `clipToOutline` | `.clipShape(RoundedRectangle())`  | Rounded corners, shapes            |
+
+
 ## 📌 How to Use This Roadmap
 
 - 📆 Follow one week at a time, build mini-projects.  
