@@ -22,6 +22,96 @@ Welcome to the **iOS Development Roadmap**, specially designed for Android devel
 
 ---
 
+```swift
+// 📘 Week 1: Learn Swift Programming Basics
+
+import UIKit
+
+// ✅ Variables and Print
+var greeting = "Hello, Swift Programming"
+print(greeting)
+
+// ✅ if-else Statement
+let score = 90
+if score >= 80 {
+    print("Good Marks")
+} else if score >= 60 {
+    print("Pass")
+}
+
+// ✅ switch Statement
+let day = "Monday"
+switch day {
+case "Monday":
+    print("Today is Monday")
+case "Tuesday":
+    print("Today is Tuesday")
+default:
+    print("Today is not Monday or Tuesday")
+}
+
+// ✅ for Loop
+for i in 1...3 {
+    print(i)
+}
+
+// ✅ Functions
+func greet(name: String) -> String {
+    return "Hello, \(name)!"
+}
+print(greet(name: "This is a swift function"))
+
+func square(number: Int) -> Int {
+    number * number
+}
+print(square(number: 10))
+
+// ✅ Arrays
+var fruits = ["apple", "banana", "orange"]
+fruits.append("mango")
+print(fruits)
+
+// ✅ Sets
+var fruit: Set = ["apple", "banana", "orange"]
+print(fruit)
+
+// ✅ Dictionary
+var fruitCount = ["apple": 2, "banana": 5, "orange": 4]
+print(fruitCount)
+
+// ✅ Struct (like `data class` in Kotlin)
+struct Person {
+    var name: String
+    var age: Int
+}
+let person1 = Person(name: "Alice", age: 25)
+print(person1.name)
+
+// ✅ Optional (Elvis Operator)
+var username: String? = "Zia"
+print(username ?? "Anonymous") // prints "Zia"
+
+username = nil
+print(username ?? "Anonymous") // prints "Anonymous"
+
+// ✅ Optional Binding
+let name: String? = "zia"
+print(name ?? "unknown name")
+
+// ✅ Protocol (like `interface` in Kotlin)
+protocol Name {
+    func school()
+    func level()
+}
+
+// ✅ Closures (like `lambda` in Kotlin)
+let development = { (name: String) in
+    print(name)
+}
+development("iOS Development")
+```
+
+
 ### 🚀 Week 2: iOS App Basics + UIKit  
 > Understand UIKit fundamentals, Storyboards, and app lifecycle.
 
