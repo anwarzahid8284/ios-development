@@ -211,7 +211,7 @@ This guide helps experienced Android developers understand iOS (SwiftUI) views a
 | `padding`, `margin`             | `.padding()`, `.frame()`          | Adds spacing around the view       |
 | `layout_gravity`, `gravity`     | `.alignment()`, stack alignment   | Align views within stacks          |
 | `weight`                        | `Spacer()` or `.frame(maxWidth:)` | Fills remaining space              |
-| `visibility=\"gone\"`           | Conditional rendering (`if`)      | Hide or remove views conditionally |
+| `visibility=gone`           | Conditional rendering (`if`)      | Hide or remove views conditionally |
 | `background`                    | `.background(Color.red)`          | Set background color or shape      |
 | `elevation`, `shadow`           | `.shadow(radius:)`                | Add shadows                        |
 | `cornerRadius`, `clipToOutline` | `.clipShape(RoundedRectangle())`  | Rounded corners, shapes            |
