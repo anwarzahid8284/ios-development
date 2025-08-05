@@ -22,15 +22,14 @@ Welcome to the **iOS Development Roadmap**, specially designed for Android devel
 
 
 ```swift
-// 📘 Week 1: Learn Swift Programming Basics
 
 import UIKit
 
-// ✅ Variables and Print
+//  Variables and Print
 var greeting = "Hello, Swift Programming"
 print(greeting)
 
-// ✅ if-else Statement
+//  if-else Statement
 let score = 90
 if score >= 80 {
     print("Good Marks")
@@ -38,7 +37,7 @@ if score >= 80 {
     print("Pass")
 }
 
-// ✅ switch Statement
+//  switch Statement
 let day = "Monday"
 switch day {
 case "Monday":
@@ -49,12 +48,12 @@ default:
     print("Today is not Monday or Tuesday")
 }
 
-// ✅ for Loop
+//  for Loop
 for i in 1...3 {
     print(i)
 }
 
-// ✅ Functions
+//  Functions
 func greet(name: String) -> String {
     return "Hello, \(name)!"
 }
@@ -65,20 +64,20 @@ func square(number: Int) -> Int {
 }
 print(square(number: 10))
 
-// ✅ Arrays
+//  Arrays
 var fruits = ["apple", "banana", "orange"]
 fruits.append("mango")
 print(fruits)
 
-// ✅ Sets
+//  Sets
 var fruit: Set = ["apple", "banana", "orange"]
 print(fruit)
 
-// ✅ Dictionary
+//  Dictionary
 var fruitCount = ["apple": 2, "banana": 5, "orange": 4]
 print(fruitCount)
 
-// ✅ Struct (like `data class` in Kotlin)
+//  Struct (like `data class` in Kotlin)
 struct Person {
     var name: String
     var age: Int
@@ -86,24 +85,24 @@ struct Person {
 let person1 = Person(name: "Alice", age: 25)
 print(person1.name)
 
-// ✅ Optional (Elvis Operator)
+//  Optional (Elvis Operator)
 var username: String? = "Zia"
 print(username ?? "Anonymous") // prints "Zia"
 
 username = nil
 print(username ?? "Anonymous") // prints "Anonymous"
 
-// ✅ Optional Binding
+//  Optional Binding
 let name: String? = "zia"
 print(name ?? "unknown name")
 
-// ✅ Protocol (like `interface` in Kotlin)
+//  Protocol (like `interface` in Kotlin)
 protocol Name {
     func school()
     func level()
 }
 
-// ✅ Closures (like `lambda` in Kotlin)
+// Closures (like `lambda` in Kotlin)
 let development = { (name: String) in
     print(name)
 }
@@ -120,6 +119,76 @@ development("iOS Development")
 - AutoLayout, StackViews, Constraints  
 - Navigation Controller  
 - Tab Bar Controller  
+
+
+## 1. Xcode Project Structure (SwiftUI)
+
+| Android (Kotlin)                     | iOS (SwiftUI)                           |
+|-------------------------------------|-----------------------------------------|
+| `AndroidManifest.xml`               | `Info.plist` (app config and permissions) |
+| `MainActivity.kt`                   | `@main struct YourApp: App {}` (entry point) |
+| `res/layout/*.xml`                  | SwiftUI `.swift` View files (e.g., `HomeView.swift`) |
+| `res/drawable`, `mipmap`            | `Assets.xcassets` (images, app icons, colors) |
+| `build.gradle`                      | Xcode project build settings             |
+| `src/main/java/`                    | Swift files inside project folder        |
+| `themes.xml`, `colors.xml`          | `Assets.xcassets` for colors & design   |
+
+### SwiftUI Project Structure Example
+
+```
+
+MySwiftUIApp/
+├── MySwiftUIAppApp.swift   ← Main entry point (@main)
+├── ContentView\.swift       ← First View
+├── Views/                  ← All SwiftUI views
+├── Models/                 ← Data models
+├── ViewModels/             ← For MVVM architecture
+├── Resources/
+│   ├── Assets.xcassets     ← Images, Colors
+│   └── LaunchScreen.storyboard ← Launch screen (optional)
+├── Info.plist              ← App metadata
+
+```
+
+## 2. App Lifecycle in SwiftUI
+
+| Android (Kotlin)                    | IOS (SwiftUI)                        |
+| ----------------------------------- | ------------------------------------ |
+| `Application.onCreate()`            | `@main App` struct init              |
+| `Activity.onCreate()`               | `WindowGroup {}` launches first view |
+| `onResume()` / `onPause()`          | `.onAppear()` / `.onDisappear()`     |
+| `Activity.finish()` / `onDestroy()` | deinit (if needed)                   |
+
+### IOS App Entry Point (SwiftUI)
+
+```swift
+import SwiftUI
+
+@main
+struct TranslatorApp: App {
+    var body: some Scene {
+        WindowGroup {
+            SplashScreenView()
+        }
+    }
+}
+```
+
+### View Lifecycle (SwiftUI)
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, World!")
+            .onAppear {
+                print("View appeared")
+            }
+            .onDisappear {
+                print("View disappeared")
+            }
+    }
+}
+```
 
 ---
 
