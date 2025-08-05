@@ -179,7 +179,7 @@ struct TranslatorApp: App {
 ```swift
 import SwiftUI
 
-@main // this is the entry point of the app
+@main // app entry poiont
 struct TranslatorApp: App {
     @Environment(\.scenePhase) var scenePhase
     init() {
