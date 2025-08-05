@@ -110,15 +110,18 @@ development("iOS Development")
 ```
 ---
 
-### 🚀 Week 2: iOS App Basics + UIKit  
+### 🚀 Week 2: iOS App Basics + SwiftUI  
 > Understand UIKit fundamentals, Storyboards, and app lifecycle.
 
 - Xcode project structure  
-- App lifecycle (`AppDelegate`, `SceneDelegate`)  
-- ViewController & Storyboards  
-- AutoLayout, StackViews, Constraints  
-- Navigation Controller  
-- Tab Bar Controller  
+- App lifecycle
+- Layout (`VStack`, `HStack`, `ZStack`, `Spacer`, `Divider`, `ScrollView`, `GeometryReader`, `LazyVStack`, `LazyHStack`, `LazyVGrid`, `LazyHGrid`) 
+- UI Elements (`Text`, `Image`, `Label`, `Link`, `TextField`, `SecureField`, `Button`, `Toggle`, `Slider`, `Stepper`, `Picker`, `DatePicker`, `ColorPicker`, `ProgressView`)
+- Container and Navigation (`NavigationStack`, `NavigationLink`, `TabView`, `List`, `ForEach`, `Form`, `Section`, `Group`, `Sheet`, `Alert`, `Popover`, `Menu`)
+- State and Data (`@State`, `@Binding`, `@StateObject`, `@ObservedObject`, `@Environment`, `@EnvironmentObject`, `@AppStorage`, `@FocusState`) 
+- Modifier (`.padding()`, `.frame()`, `.background()`, `.foregroundColor()`, `.font()`, `.cornerRadius()`, `.shadow()`, `.opacity()`, `.offset()`, `.rotationEffect()`, `.scaleEffect()`)
+  
+ 
 
 
 ## 1. Xcode Project Structure (SwiftUI)
