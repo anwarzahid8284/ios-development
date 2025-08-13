@@ -120,8 +120,34 @@ development("iOS Development")
 - Container and Navigation (`NavigationStack`, `NavigationLink`, `TabView`, `List`, `ForEach`, `Form`, `Section`, `Group`, `Sheet`, `Alert`, `Popover`, `Menu`)
 - State and Data (`@State`, `@Binding`, `@StateObject`, `@ObservedObject`, `@Environment`, `@EnvironmentObject`, `@AppStorage`, `@FocusState`) 
 - Modifier (`.padding()`, `.frame()`, `.background()`, `.foregroundColor()`, `.font()`, `.cornerRadius()`, `.shadow()`, `.opacity()`, `.offset()`, `.rotationEffect()`, `.scaleEffect()`)
-  
- 
+
+**1. BUTTON (Action, Label, Style)**
+ ```swift
+VStack {
+    Button {
+        print("Button Pressed")
+    } label: {
+        Text("Press Me")
+    }
+    .padding()
+    .background(Color.blue)
+    .foregroundColor(.white)
+    .clipShape(Capsule())
+}
+```
+**2. Color (primary,secondary,rgb,asset color)**
+
+```swift
+/// provided color .foregroundColor(Color.red)
+/// primary color .foregroundColor(Color.primary) --> automatically handle for light and dark them
+/// secondary color .foregroundColor(Color.secondary) color which used same for both light and dark them
+/// rgb color .foregroundColor(Color.init(red: 100/255, green: 50/255, blue: 0/255))
+/// asset color
+            
+Rectangle()
+    .foregroundColor(Color.black)
+    .frame(width: 200, height: 100)
+```
 
 
 ## 1. Xcode Project Structure (SwiftUI)
