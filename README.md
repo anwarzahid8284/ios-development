@@ -110,16 +110,63 @@ development("iOS Development")
 ```
 ---
 
-### 🚀 Week 2: iOS App Basics + UIKit  
+### 🚀 Week 2: iOS App Basics + SwiftUI  
 > Understand UIKit fundamentals, Storyboards, and app lifecycle.
 
 - Xcode project structure  
-- App lifecycle (`AppDelegate`, `SceneDelegate`)  
-- ViewController & Storyboards  
-- AutoLayout, StackViews, Constraints  
-- Navigation Controller  
-- Tab Bar Controller  
+- App lifecycle
+- Layout (`VStack`, `HStack`, `ZStack`, `Spacer`, `Divider`, `ScrollView`, `GeometryReader`, `LazyVStack`, `LazyHStack`, `LazyVGrid`, `LazyHGrid`) 
+- UI Elements (`Text`, `Image`, `Label`, `Link`, `TextField`, `SecureField`, `Button`, `Toggle`, `Slider`, `Stepper`, `Picker`, `DatePicker`, `ColorPicker`, `ProgressView`)
+- Container and Navigation (`NavigationStack`, `NavigationLink`, `TabView`, `List`, `ForEach`, `Form`, `Section`, `Group`, `Sheet`, `Alert`, `Popover`, `Menu`)
+- State and Data (`@State`, `@Binding`, `@StateObject`, `@ObservedObject`, `@Environment`, `@EnvironmentObject`, `@AppStorage`, `@FocusState`) 
+- Modifier (`.padding()`, `.frame()`, `.background()`, `.foregroundColor()`, `.font()`, `.cornerRadius()`, `.shadow()`, `.opacity()`, `.offset()`, `.rotationEffect()`, `.scaleEffect()`)
 
+**1. BUTTON (Action, Label, Style)**
+ ```swift
+VStack {
+    Button {
+        print("Button Pressed")
+    } label: {
+        Text("Press Me")
+    }
+    .padding()
+    .background(Color.blue)
+    .foregroundColor(.white)
+    .clipShape(Capsule())
+}
+```
+**2. Color (primary,secondary,rgb,asset color)**
+
+```swift
+/// provided color .foregroundColor(Color.red)
+/// primary color .foregroundColor(Color.primary) --> automatically handle for light and dark them
+/// secondary color .foregroundColor(Color.secondary) color which used same for both light and dark them
+/// rgb color .foregroundColor(Color.init(red: 100/255, green: 50/255, blue: 0/255))
+/// asset color
+            
+Rectangle()
+    .foregroundColor(Color.black)
+    .frame(width: 200, height: 100)
+```
+**3. System icon in swiftUI (SFSybmol)**
+
+```swift
+Image(systemName: "xmark.circle.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .foregroundColor(.red)
+```
+**4. Frame & Alignments**
+
+```
+/// center,leading,trailing,top,topleading,toptrailing,bottom,bottomleading,bottomtrailing
+
+Text("Hello, SwiftUI!")
+                .background(.red)
+                .foregroundColor(.white)
+                .frame(width: 200,height: 200,alignment: .center)
+                .background(.blue)
+```
 
 ## 1. Xcode Project Structure (SwiftUI)
 
