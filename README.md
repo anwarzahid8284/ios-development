@@ -156,6 +156,17 @@ Image(systemName: "xmark.circle.fill")
                 .frame(width: 50, height: 50)
                 .foregroundColor(.red)
 ```
+**4. Frame & Alignments**
+
+```
+/// center,leading,trailing,top,topleading,toptrailing,bottom,bottomleading,bottomtrailing
+
+Text("Hello, SwiftUI!")
+                .background(.red)
+                .foregroundColor(.white)
+                .frame(width: 200,height: 200,alignment: .center)
+                .background(.blue)
+```
 
 ## 1. Xcode Project Structure (SwiftUI)
 
