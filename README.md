@@ -148,7 +148,14 @@ Rectangle()
     .foregroundColor(Color.black)
     .frame(width: 200, height: 100)
 ```
+**3. System icon in swiftUI (SFSybmol)**
 
+```swift
+Image(systemName: "xmark.circle.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .foregroundColor(.red)
+```
 
 ## 1. Xcode Project Structure (SwiftUI)
 
