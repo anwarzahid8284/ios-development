@@ -13,79 +13,50 @@
     like in android statusbar and navigationbar
  7. Group --> every element of swift ui at most 10 child used if you exceed then
      ten child you will be receive an error so for that we used
+ 8. Button (action,lable and style)
+ 9. Color (privided color, primary,secondary,rgb,asset color)
+ 10. System Icons (SFSymbols)
+ 11. Frame and Alignmets
  */
 
 import SwiftUI
 
 struct ContentView: View {
-    @State private var userName: String = ""
-    @State private var password: String = "password"
     var body: some View {
-        /// screen content cover including status bar and naivgation bar
-         //Color.red.edgesIgnoringSafeArea(.all)
-        /// solve the ten max child add to any element of the
-        VStack{
-            Group{
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-            }
-            Group{
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-                Text("1")
-            }
+        /// 8 Button (action,label and style)
+        VStack {
+            Button {
+                print("Button Pressed")
+            }label:{
+                Text("Press Me")
+            }.padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .clipShape(Capsule())
+            /// 9 colors
+            /// provided color .foregroundColor(Color.red)
+            /// primary color .foregroundColor(Color.primary) --> automatically handle for light and dark them
+            /// secondary color .foregroundColor(Color.secondary) color which used same for both light and dark them
+            /// rgb color .foregroundColor(Color.init(red: 100/255, green: 50/255, blue: 0/255))
+            /// asset color
             
-            
-            Text("1")
-            Text("1")
-            Text("1")
-            Text("1")
-            Text("1")
+            //Rectangle()
+               // .foregroundColor(Color.black)
+               // .frame(width: 200, height: 100)
+            /// 10 SFsymbol or system icons
+            Image(systemName: "xmark.circle.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .foregroundColor(.red)
+            Text("Hello, SwiftUI!")
+                .background(.red)
+                .foregroundColor(.white)
+                .frame(width: 200,height: 200,alignment: .center)
+                .background(.blue)
         }
         
         
         
-        
-        
-        // Text field
-//        VStack {
-//            TextField("Enter your name",text:$password,onEditingChanged: {
-//                _ in print("Editing")
-//            })
-//                .padding()
-//                .textFieldStyle(.roundedBorder)
-//                .cornerRadius(10)
-//                Text(userName)
-//            Button("Done"){
-//                
-//            }
-//        }
-//        VStack{
-//            TextEditor(text: $userName)
-//                .scrollContentBackground(.hidden)
-//                .background(Color.gray.opacity(0.3))
-//                .multilineTextAlignment(.center)
-//                .dynamicTypeSize(.xxxLarge)
-//                .lineSpacing(30)
-//                .padding()
-//                .frame(height: 300)
-//            
-//                
-//        }
         
     }
 }
