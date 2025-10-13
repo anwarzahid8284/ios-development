@@ -158,7 +158,7 @@ Image(systemName: "xmark.circle.fill")
 ```
 **4. Frame & Alignments**
 
-```
+```swift
 /// center,leading,trailing,top,topleading,toptrailing,bottom,bottomleading,bottomtrailing
 
 Text("Hello, SwiftUI!")
@@ -167,6 +167,12 @@ Text("Hello, SwiftUI!")
                 .frame(width: 200,height: 200,alignment: .center)
                 .background(.blue)
 ```
+**5. Weather Screen**
+<p align="center">
+  <img src="./frame_alignment_preview.png" alt="SwiftUI Frame and Alignment Example" width="400"/>
+</p>
+
+
 
 ## 1. Xcode Project Structure (SwiftUI)
 
