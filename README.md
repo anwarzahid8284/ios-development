@@ -167,7 +167,7 @@ Text("Hello, SwiftUI!")
                 .frame(width: 200,height: 200,alignment: .center)
                 .background(.blue)
 ```
-**5. Weather Screen**
+**5. Weather Screens**
 <div style="display: flex; justify-content: center; align-items: center; gap: 16px;">
   <img src="./weather_screen_light_theme.png" width="400" height="510" style="object-fit: cover; border-radius: 12px;"/>
   <img src="./weather_screen_dark_theme.png" width="400" height="510" style="object-fit: cover; border-radius: 12px;"/>
@@ -289,6 +289,18 @@ struct WeatherButtonView: View {
 }
 
 ```
+
+**5. Barcode Screens**
+
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 12px;">
+  <img src="./not_yet_scanned.PNG"
+       style="width: 400px; height: auto; border-radius: 12px; object-fit: contain;" />
+  <img src="./scanned_code.PNG"
+       style="width: 400px; height: auto; border-radius: 12px; object-fit: contain;" />
+</div>
+
+
+
 
 ## 1. Xcode Project Structure (SwiftUI)
 
