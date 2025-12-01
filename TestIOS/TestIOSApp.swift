@@ -14,7 +14,9 @@ struct TestIOSApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            WeatherScreen()
+            //WeatherScreen()
+            //AppFrameScreen()
+            BarcodeScannerView()
                 .onAppear {
                     print("content view appeared")
                 }
