@@ -2,7 +2,7 @@
 //  BarcodeScannerView.swift
 //  TestIOS
 //
-//  Created by Affan Laptops on 01/12/2025.
+//  Created by Affan L aptops on 01/12/2025.
 //
 
 import SwiftUI

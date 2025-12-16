@@ -8,15 +8,12 @@ import SwiftUI
 
 @main // this is the entry point of the app
 struct TestIOSApp: App {
-    @Environment(\.scenePhase) var scenePhase
-    init() {
-        print("app launched")
-    }
     var body: some Scene {
         WindowGroup {
             //WeatherScreen()
             //AppFrameScreen()
-            BarcodeScannerView()
+            //BarcodeScannerView()
+            AppetizerScreen()
                 .onAppear {
                     print("content view appeared")
                 }
