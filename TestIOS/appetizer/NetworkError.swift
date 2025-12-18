@@ -13,3 +13,6 @@ enum NetworkError : Error{
     case invalidData
     case unableToComplete
 }
+
+
+
