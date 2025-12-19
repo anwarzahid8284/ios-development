@@ -10,7 +10,7 @@ import Foundation
 final class NetworkManager {
 
     static let shared = NetworkManager()
-    private let appetizerURL = "https://free-food-menus-8api-two.vercel.app/burgers"
+    private let appetizerURL = "https://free-food-menus-api-two.vercel.app/burgers"
 
     private init() {}
 

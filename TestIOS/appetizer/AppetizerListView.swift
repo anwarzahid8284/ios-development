@@ -10,7 +10,6 @@ import SwiftUI
 struct AppetizerListView: View {
     @StateObject var appetizerViewModel = AppetizerViewModel()
     var body: some View {
-<<<<<<< HEAD
         ZStack {
             NavigationView{
                 List(appetizerViewModel.appitizer){ appitizer in
@@ -24,25 +23,10 @@ struct AppetizerListView: View {
             if appetizerViewModel.isLoading{
                 LoadingView()
             }
-            
-=======
-        NavigationView{
-            List(appetizerViewModel.appitizer){ appitizer in
-                AppetizerItemView(appitizer: appitizer)
-            }
-            .navigationTitle("Appetizers")
-        }
-        .onAppear{
-            appetizerViewModel.getAppetizers()
-        }
-        .alert(item: $appetizerViewModel.networkErrorMessage){ networkErrorMessage in
-            Alert(title: networkErrorMessage.errorTitle, message: networkErrorMessage.errorMessage, dismissButton: networkErrorMessage.dismissButton)
->>>>>>> main
         }
         .alert(item: $appetizerViewModel.networkErrorMessage){ networkErrorMessage in
             Alert(title: networkErrorMessage.errorTitle, message: networkErrorMessage.errorMessage, dismissButton: networkErrorMessage.dismissButton)
         }
-        
     }
 }
 

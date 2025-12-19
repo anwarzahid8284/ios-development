@@ -5,19 +5,10 @@ final class AppetizerViewModel: ObservableObject {
     
     @Published var appitizer:[AppetizerModel] = []
     @Published var networkErrorMessage : NetworkErrorMessage?
-<<<<<<< HEAD
     @Published var isLoading : Bool = false
     func getAppetizers(){
-        self.isLoading = true
         NetworkManager.shared.getAppetizers { (result) in
             DispatchQueue.main.async {
-                self.isLoading = false
-=======
-    
-    func getAppetizers(){
-        NetworkManager.shared.getAppetizers { (result) in
-            DispatchQueue.main.async {
->>>>>>> main
                 switch result {
                 case .success(let appetizer):
                     self.appitizer=appetizer
@@ -37,4 +28,5 @@ final class AppetizerViewModel: ObservableObject {
             
         }
     }
+
 }
