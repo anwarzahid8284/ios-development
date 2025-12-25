@@ -1,5 +1,5 @@
 //
-//  AccountView.swift
+//  OrderView.swift
 //  TestIOS
 //
 //  Created by Affan Laptops on 08/12/2025.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct AccountView: View {
+struct OrderView: View {
     var body: some View {
-        Text("Account view")
+        Text("Order View")
     }
 }
 
 #Preview {
-    AccountView()
+    OrderView()
 }
