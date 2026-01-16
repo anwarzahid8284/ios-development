@@ -4,7 +4,7 @@ import SwiftUI
 final class AppetizerViewModel: ObservableObject {
     
     @Published var appitizer:[AppetizerModel] = []
-    @Published var networkErrorMessage : NetworkErrorMessage?
+    @Published var alertItem : AlertItem?
     @Published var isLoading : Bool = false
     
     func getAppetizers(){
@@ -16,13 +16,13 @@ final class AppetizerViewModel: ObservableObject {
                 case .failure(let error):
                     switch(error){
                     case .invalidData:
-                        self.networkErrorMessage = ErrorMessage.invalidData
+                        self.alertItem = AlertContext.invalidData
                     case .invalidURL:
-                        self.networkErrorMessage = ErrorMessage.invalidURL
+                        self.alertItem = AlertContext.invalidURL
                     case .unableToComplete:
-                        self.networkErrorMessage = ErrorMessage.unableToComplete
+                        self.alertItem = AlertContext.unableToComplete
                     case .invalidResponse:
-                        self.networkErrorMessage = ErrorMessage.invalideResponse
+                        self.alertItem = AlertContext.invalideResponse
                     }
                 }
             }
